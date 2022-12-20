@@ -1,0 +1,9 @@
+{% if site.favourites %}
+<hr>
+<h5>FAVOURITES</h5>
+<ul class="list-inline">
+  {% for favourite in site.favourites %}
+  <li><a href="{{favourite.href}}">{{favourite.title}}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,7 @@
+@startuml
+MediaCodecBuffer <|-- Codec2Buffer
+Codec2Buffer <|-- LocalLinearBuffer
+Codec2Buffer <|-- DummyContainerBuffer
+Codec2Buffer <|-- LinearBlockBuffer
+Codec2Buffer <|-- ConstGraphicBlockBuffer 
+@enduml

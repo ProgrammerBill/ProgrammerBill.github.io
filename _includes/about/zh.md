@@ -1,8 +1,8 @@
-Hi,我是Bill，我打算用列表的方式来介绍下自己:
 
+- 五年专注Android设备开发，参与过平板，电视盒子，车载，音箱等项目, 目前参与Android 12开发。
+- 有Camera HAL，Media，OTA，开机动画，GMS适配，Framework等开发经验。
+- 熟悉CTS测试流程，掌握ANR, Monkey稳定性分析, 反编译App/so库能力。
+- 具备App到Native层的开发能力。掌握C/C++，Java，Python, Shell。
 
-- 地点珠海，土生土长的珠海本地人
-- 华南理工五山和尚庙大学毕业，一不小心读了7年
-- 工作是程序员，在某不知名三线芯片公司工作，负责Android系统
-- 资深吉他初学者，全名K歌常驻用户
-- 骑行菜鸟，骑过两次远途，其中一次花了21天骑了川藏线
+![Android技术栈](/img/bill/about/Bill‘s 技能栈.png)
+

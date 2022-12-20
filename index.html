@@ -4,36 +4,35 @@ description: "人如果没有梦想，跟咸鱼有什么分别"
 ---
 
 {% for post in site.posts %}
-	{% if post.stickie != true %}
-		{% continue %}
-	{% endif %}
+	{% if post.stickie == true and post.life != true %}
 	<div class="post-preview">
 		<a href="{{ post.url | prepend: site.baseurl }}">
 			<h2 class="post-title">
 				{{ post.title }}
 			</h2>
-			{% if post.subtitle %}
+			{% if post.summary %}
 			<h3 class="post-subtitle">
-				{{ post.subtitle }}
+				{{ post.summary }}
 			</h3>
 			{% endif %}
-			<div class="post-content-preview">
+			<!--div class="post-content-preview">
 				{% if post.lang == 'en' %}
 				{{ post.content | strip_html | truncate:300 }}
 				{% else %}
 				{{ post.content | strip_html | truncate:200 }}
 				{% endif %}
-			</div>
+			</div-->
 		</a>
 		<p class="post-meta">
 		Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
 		</p>
 	</div>
-<hr>
+	<hr>
+	{% endif %}
 {% endfor %}
 
 {% for post in paginator.posts %}
-	{% if post.stickie == true %}
+	{% if post.stickie == true or post.life == true %}
 		{% continue %}
 	{% endif %}
 	<div class="post-preview">
@@ -41,18 +40,11 @@ description: "人如果没有梦想，跟咸鱼有什么分别"
 			<h2 class="post-title">
 				{{ post.title }}
 			</h2>
-			{% if post.subtitle %}
+			{% if post.summary %}
 			<h3 class="post-subtitle">
-				{{ post.subtitle }}
+				{{ post.summary }}
 			</h3>
 			{% endif %}
-			<div class="post-content-preview">
-				{% if post.lang == 'en' %}
-				{{ post.content | strip_html | truncate:300 }}
-				{% else %}
-				{{ post.content | strip_html | truncate:200 }}
-				{% endif %}
-			</div>
 		</a>
 		<p class="post-meta">
 		Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
@@ -60,8 +52,6 @@ description: "人如果没有梦想，跟咸鱼有什么分别"
 	</div>
 <hr>
 {% endfor %}
-
-
 
 
 <!-- Pager -->

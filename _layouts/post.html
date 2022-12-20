@@ -9,6 +9,10 @@ layout: default
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
 
+<!--//添加评论系统-->
+<link rel="stylesheet" href="../../../../css/gitalk.css">
+<script src="../../../../js/gitalk.min.js"></script>
+
 <!-- Post Content -->
 <article>
     <div class="container">
@@ -66,13 +70,13 @@ layout: default
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
 
-				<!--   gitalk  -->
-				{% if site.gitalk %}
-				<div class="comment">
-					{% include comments.html %}
-				</div>
-				{% endif %}       
-            </div>  
+				 <!--   gitalk  -->
+				 {% if site.gitalk %}
+				 <div class="comment">
+				 {% include comments.html %}
+				 </div>
+				 {% endif %}
+            </div>
 
     <!-- Side Catalog Container -->
         {% if page.catalog %}
@@ -117,7 +121,7 @@ layout: default
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
   var cloudTieConfig = {
-    url: document.location.href, 
+    url: document.location.href,
     sourceId: "",
     productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",
     target: "cloud-tie-wrapper"

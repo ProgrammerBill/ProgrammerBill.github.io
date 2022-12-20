@@ -1,0 +1,52 @@
+@startuml
+autonumber
+autoactivate on
+participant "MediaCodec" as MC
+participant "CCodecBufferChannel" as CCBC
+participant "MediaCodecBuffer" as MCB
+participant "C2Work" as C2W
+participant "C2Buffer" as C2B
+participant "PipeLineWatcher" as PLW
+participant "Codec2Client::Component" as C2CC
+participant "BufferCallback" as BC
+
+MC -> MC : queueInputBuffer
+return
+alt mLeftover not empty
+  MC -> MC : handleLeftover
+    MC -> MC : onQueueInputBuffer
+      MC -> CCBC : attachBuffer
+        CCBC -> MCB: copy
+        return
+      return
+      MC -> CCBC : queueInputBuffer
+        CCBC -> CCBC: queueInputBufferInternal
+          CCBC -> C2W: constructor
+          return
+          CCBC -> C2B: releaseBuffer\n(MediaCodecBuffer)
+          return (C2Buffer) obj
+          CCBC -> C2W: push_back\n(C2Buffer)
+          return
+          CCBC -> PLW: onWorkQueued
+          return
+          CCBC -> C2CC: queue
+          return
+          CCBC -> C2B: releaseBuffer\n(MediaCodecBuffer)
+          return
+          CCBC -> CCBC: feedInputBufferIfAvailableInternal
+            CCBC -> BC : onInputBufferAvailable
+              BC -> MC : updateBuffers
+              return
+            return
+          return
+        return
+      return
+    return
+  return
+else mLeftover empty
+  MC -> MC : onQueueInputBuffer(same as above)
+  return
+end
+
+
+@enduml

@@ -1,11 +1,11 @@
 # Site settings
 title: Bill's Blog
-SEOTitle: 西瓜杀手的博客 | Bill's Blog
-header-img: img/bill/blog_header.jpeg
+SEOTitle: Bill聪的博客 | Bill's Blog
+header-img: img/bill/header-posts/2020-04-16.jpg
 email: cjcbill@gmail.com
 description: ""
-keyword: "Bill,西瓜杀手"
-url: "http://www.cjcbill.xyz"              # your host, for absolute URL
+keyword: "Bill"
+url: "http://www.cjcbill.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -26,11 +26,10 @@ wesing_uid:    669d9d82242f378a
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md","start.sh","newBlog.sh","updateBlog"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
-
+timezone: CN
 
 
 # Gems
@@ -56,61 +55,73 @@ kramdown:
       start_line: 1
 
 
+layout: default
+comments: true
+
 
 # Disqus settings
-#disqus_username: hux
+# disqus_username: billcong
 
 # Netease settings
-#netease_comment: false
+# netease_comment: true
 
 gitalk:
   enable: true
-  clientID: 8571842b5d0f26f15f55 
-  clientSecret: 0062cce756d70bbe1cc4ed2796dcf5f7877cd0a1 
-  repo: 'BlogComments' 
+  clientID: d1f33888a68617b656a2
+  clientSecret: db3ddb88414cd12af40d8ca9062f18fe5efb156b
+  repo: 'BlogComments'
   owner: 'ProgrammerBill'
   admin: ['ProgrammerBill']
   id: 'page.date'
 
 
 # Analytics settings
-# Baidu Analytics 
+# Baidu Analytics
 # ba_track_id: [your track id]
 
 # Google Analytics
 #ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 #ga_domain: huangxuan.me
 
-
-
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "I know I'm gonna be with you.So I take my time"
-sidebar-avatar: /img/bill/DanielWu.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
+sidebar-about-description: "* 华南理工七年专业打酱油选手<br>* 深耕五年安卓啥也不是的底层码农<br>* 十二年资深吉他弹唱业余爱好者<br>* 全民K歌一千僵尸粉的过气主播<br>"
+sidebar-avatar: /img/bill/portrait_20190605.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
-
-
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-
-
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
-
-
 
 # Friends
 friends: [
     #{
-    #    title: "解旻的博客",
-    #    href: "http://xieminis.me/"
+    #    title: "西瓜杀手的博客",
+    #    href: "http://billcong.xyz"
     #}
+]
+
+favourites: [
+    {
+        title: "容忠健的博客",
+        href: "https://uz2020.github.io/"
+    },
+    {
+        title: "蜗窝科技",
+        href: "http://www.wowotech.net/"
+    },
+    {
+        title: "GitYuan",
+        href: "http://gityuan.com/"
+    },
+    {
+        title: "酷壳",
+        href: "https://coolshell.cn/"
+    }
 ]

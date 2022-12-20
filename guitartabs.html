@@ -1,0 +1,30 @@
+---
+layout: page
+title: "Bill's GuitarTabs"
+description: "Bill聪的私藏吉他谱"
+header-img: "img/bill/music-bg.png"
+multilingual: true
+order: 2
+---
+
+{% assign sorted_posts = site.posts | sort:"order" %}
+{% for post in sorted_posts %}
+	{% if post.guitartab == true %}
+        <div class="post-preview">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+                <h2 class="post-title">
+                        {{ post.title }}
+                </h2>
+                {% if post.subtitle %}
+                <h3 class="post-subtitle">
+                        {{ post.subtitle }}
+                </h3>
+                {% endif %}
+        </a>
+        <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        </p>
+	</div>
+	<hr>
+        {% endif %}
+{% endfor %}

@@ -25,6 +25,10 @@ layout: default
 
                 <!-- Friends Blog -->
                 {% include friends.html %}
+
+		<!-- Favourite Blog -->
+                {% include favourites.html %}
+
             </div>
         {% else %}
 
@@ -36,8 +40,8 @@ layout: default
                 col-sm-12
                 col-xs-12
                 postlist-container
-            ">
-    			{{ content }}
+		">
+		{{ content }}
     		</div>
     <!-- Sidebar Container -->
             <div class="
@@ -54,7 +58,10 @@ layout: default
                 {% include short-about.html %}
 
                 <!-- Friends Blog -->
-                {% include friends.html %}
+                <!--{% include friends.html %}-->
+
+		<!-- Favourite Blog -->
+                {% include favourites.html %}
     		</div>
         {% endif %}
 	</div>
