@@ -1,0 +1,3 @@
+[submodule "leanote2md"]
+	path = leanote2md
+	url = https://github.com/ProgrammerBill/leanote2md
