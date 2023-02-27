@@ -17,6 +17,8 @@ tags:
     * [1.1 分辨率相关](#11-分辨率相关)
         * [1.1.1 分辨率转换](#111-分辨率转换)
         * [1.1.2 分辨率拼接](#112-分辨率拼接)
+    * [1.2 播放码流](#12-播放码流)
+    * [1.3 播放YUV](#13-播放yuv)
 * [2. 图片](#2-图片)
     * [2.1 格式转换](#21-格式转换)
 * [3. 查看视频包信息](#3-查看视频包信息)
@@ -55,6 +57,19 @@ file '/path/to/file3.mp4'
 
 ```
 ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
+```
+
+## 1.2 播放码流
+
+```
+ffplay [bitstream file]
+```
+
+## 1.3 播放YUV
+
+
+```
+ffplay -f rawvideo -video_size [widthxheight] [input YUV]
 ```
 
 # 2. 图片
