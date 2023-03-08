@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Android Codec2框架分析
+summary: "\"Android12后Codec2替代OMX\""
 author: Bill
 header-img: img/bill/header-posts/2022-05-11-header.jpg
 catalog: true
 stickie: false
 life: false
-tags: 
+tags:
 - #catalog
 - #summary=“Codec2学习笔记”
 guitartab: false
@@ -211,11 +212,11 @@ int main(int argc __unused, char** argv)
     // 有兴趣可以查阅https://google.github.io/minijail/
     SetUpMinijail(kSystemSeccompPolicyPath, kVendorSeccompPolicyPath);
     strcpy(argv[0], "media.swcodec");
-    // 定义最大用于HIDL通信的线程为64 
+    // 定义最大用于HIDL通信的线程为64
     ::android::hardware::configureRpcThreadpool(64, false);
-    // 3.4 注册Codec2服务 
+    // 3.4 注册Codec2服务
     RegisterCodecServices();
-    // 加入线程池 
+    // 加入线程池
     ::android::hardware::joinRpcThreadpool();
 }
 ```
@@ -921,7 +922,7 @@ getTraits只需要在初次调用时读取即可，这里使用了std的`call_on
         });
         return mTraits;
     }
-    
+
 std::vector<C2Component::Traits> Codec2Client::_listComponents(
         bool* success) const {
     std::vector<C2Component::Traits> traits;
@@ -959,7 +960,7 @@ std::vector<C2Component::Traits> Codec2Client::_listComponents(
 
 
 ```c++
-# frameworks/av/media/codec2/hidl/1.0/utils/ComponentStore.cpp  
+# frameworks/av/media/codec2/hidl/1.0/utils/ComponentStore.cpp
 // 如果是使用Codec2 hidl 1.0版本的话如下，具体store的初始化后续分析软解服务时分析
 Return<void> ComponentStore::listComponents(listComponents_cb _hidl_cb) {
     std::vector<std::shared_ptr<const C2Component::Traits>> c2traits =
@@ -2389,7 +2390,7 @@ status_t MediaCodec::onQueueInputBuffer(const sp<AMessage> &msg) {
     if (index >= mPortBuffers[kPortIndexInput].size()) {
         return -ERANGE;
     }
-    
+
     BufferInfo *info = &mPortBuffers[kPortIndexInput][index];
     // 从BufferInfo中获取到MediaCodecBuffer
     sp<MediaCodecBuffer> buffer = info->mData;
