@@ -1,13 +1,11 @@
 ---
 layout:     post
 title:      "Hello World"
-summary:   " \"Hello World, Hello Blog\""
+subtitle:   " \"Hello World, Hello Blog\""
 date:       2018-10-13 12:00:00
 author:     "Bill"
 header-img: "img/bill/post-bg-2018-10-13.jpg"
 catalog: true
-life: true
-hidden: false
 tags:
 - 生活
 - 杂感

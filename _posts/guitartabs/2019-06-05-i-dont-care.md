@@ -1,13 +1,11 @@
 ---
 layout:     post
 title:      "I don't care"
-subtitle:   "\"I can deal with the bad nights when I’m with my baby yeah\""
+subtitle:   "Ed Sheeran"
 date:       2019-06-05 22:46:00
 author:     "Bill"
 header-img: "img/bill/header-posts/2019-06-05-header.jpg"
 catalog: true
-life: true
-guitartab: true
 tags:
 - Ed Sheeran
 ---

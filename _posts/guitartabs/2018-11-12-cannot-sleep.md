@@ -1,13 +1,11 @@
----
+---                                                                                                                                                   
 layout:     post
-title:      "睡不着"
-subtitle:   "万岁爷"
+title:      "睡不着" 
+subtitle:   "睡不着 万岁爷" 
 date:       2018-11-13 22:00:00
-author:     "Bill"
+author:     "Bill"    
 header-img: "img/bill/header-posts/2018-11-13-header.jpg"
 catalog: true
-life: true
-guitartab: true
 tags:
 - 吉他
 ---
@@ -15,17 +13,17 @@ tags:
 # 睡不着
 
 ```
-Cmaj7	Bm7  Am7  D
+Cmaj7	Bm7  Am7  D	
 
 Cmaj7
 总是睡不着
-Bm7
+Bm7          
 空气里充斥着烦恼
 Bbm7        Am7    D     Gmaj7
 明知道有的事还太早不要庸人自扰
 D      Cmaj7
 就是睡不着
-Bm7
+Bm7       
 每当夜晚一到就活蹦乱跳
 Bbm7        Am7    D     Gmaj7
 翻来覆去直到明天神魂颠倒
@@ -39,7 +37,7 @@ Gmaj7               Dm7     Gmaj7
 才能够换来每一个安稳睡眠我不要
 Cmaj7       Bm7      Em
 每天每夜 被钉在床板上面   度秒如年
-Cmaj7
+Cmaj7       
 电热毯到现在还没断电
 D              Cmaj7
 我已经花了太多的时间一厢情愿
@@ -52,7 +50,7 @@ Bm7
 为何有时会动弹不了
 Bbm7    Am7        D    Gmaj7
 歌中不是曾说小小少年 很少烦恼
-  D    Cmaj7  Bm7
+  D    Cmaj7  Bm7       
 床又开始摇 是哪里又地震还是造谣
   Bbm7  Am7    D    Gmaj7
 冬天黑的好早却让我想逃
@@ -74,7 +72,7 @@ Gmaj7   Dm7        Gmaj7       Cmaj7
 也没能给我一个深度的睡眠哪怕是一天一夜
 Bm7           Em
 我都会用尽全力与世隔绝
-Cmaj7
+Cmaj7     
 可惜的是我的失眠无解
 D             Cmaj7         D
 因为我也不晓得我在发什么疯癫
