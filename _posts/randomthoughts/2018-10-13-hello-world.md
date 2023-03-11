@@ -6,6 +6,7 @@ date:       2018-10-13 12:00:00
 author:     "Bill"
 header-img: "img/bill/post-bg-2018-10-13.jpg"
 catalog: true
+life: true
 tags:
 - 生活
 - 杂感

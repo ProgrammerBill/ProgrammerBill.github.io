@@ -6,7 +6,7 @@ date:       2023-03-11 11:00:21
 author:     "Bill"
 header-img: "img/bill/header-posts/2023-03-11-header.jpg"
 catalog: true
-hide : false
+hide : true
 tags:
     - default
 ---
