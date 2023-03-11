@@ -4,10 +4,10 @@
 
 ---
 
-- 微信: cjcbill
-- 电子邮箱: cjcbill@gmail.com
-- 个人博客: http://cjcbill.com
-- GitHub: https://github.com/ProgrammerBill
+- **微信:**     cjcbill
+- **电子邮箱:** cjcbill@gmail.com
+- **个人博客:** [http://cjcbill.com](http://cjcbill.com)
+- **GitHub:**   [https://github.com/ProgrammerBill](https://github.com/ProgrammerBill)
 
 # 工作经验
 
@@ -18,7 +18,7 @@
 **2020/05 - 至今 平板(Android 11/12/13)**
 
 - 多媒体播控(MediaPlayer/Codec2/OMX)
-- Camera(HAL3)
+- Camera(HAL1/HAL3)
 - GMS Tests(CTS/GTS/Camera ITS)
 - Framework(HIDL/AIDL)
 
@@ -26,20 +26,20 @@
 
 **2016/07 - 2020/05 电视盒子(Android 4.4/7/10)**
 
-- OTA/Recovery开发
-- 系统应用维护(TvLauncher/Settings/Camera2)
-- BootAnimation开发
+- OTA/Recovery/Bootanimation
+- 方案定制/裁剪
+- 系统应用开发维护(TvLauncher/Settings/Camera2)
 - Framework层开发(JNI/Binder)
 
 # 编程语言
 
 ---
 
-- C/C++ 😃
-- Java  🙂
+- C/C++  😃
+- Java   🙂
 - Python 🙂
-- Shell 😄
-- Go 😅
+- Shell  😄
+- Go     😅
 
 # 工具
 

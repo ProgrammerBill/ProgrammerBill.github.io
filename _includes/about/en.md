@@ -4,10 +4,10 @@
 
 ---
 
-- Wechat: cjcbill
-- Email: cjcbill@gmail.com
-- Blog: http://cjcbill.com
-- GitHub: https://github.com/ProgrammerBill
+- **Wechat:** cjcbill
+- **Email:**  cjcbill@gmail.com
+- **Blog:**   [http://cjcbill.com](http://cjcbill.com)
+- **GitHub:** [https://github.com/ProgrammerBill](https://github.com/ProgrammerBill])
 
 # Experience
 
@@ -18,29 +18,28 @@
 **2020/05 - Present Tablet(Android 11/12/13)**
 
 - Multimedia(MediaPlayer/Codec2/OMX)
-- Camera(HAL3)
+- Camera(HAL1/HAL3)
 - GMS Tests(CTS/GTS/Camera ITS)
 - Framework(HIDL/AIDL)
 
 ### Android Framework Engineer
 
-**2016/07 - 2020/05 Tv Box(Android 4.4/7/10)**
+**2016/07 - 2020/05 TV BOX(Android 4.4/7/10)**
 
-- OTA/Recovery
+- OTA/Recovery/BootAnimation
+- Device Customized/Optimization
 - System Apks(TvLauncher/Settings/Camera2)
-- BootAnimation
 - Framework(JNI/Binder)
 
 # Programming Languages
 
 ---
 
-- C/C++ 😃
-- Java  🙂
+- C/C++  😃
+- Java   🙂
 - Python 🙂
-- Shell 😄
-- Go 😅
-
+- Shell  😄
+- Go     😅
 
 # Tools
 
