@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "明天的烦恼交给明天"
-subtitle:    "\"把明天的烦恼交给明天 今天别想了\""
+summary:    "\"把明天的烦恼交给明天 今天别想了\""
 date:       2020-07-14 12:21:56
 author:     "Bill"
 header-img: "img/bill/header-posts/2020-07-14-header.jpg"

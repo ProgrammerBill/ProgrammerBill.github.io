@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Lego House"
-subtitle:   "\"I will love you better now\""
+summary:   "\"I will love you better now\""
 date:       2020-01-30 16:19:05
 author:     "Bill"
 header-img: "img/bill/header-posts/2020-01-30-header.jpg"

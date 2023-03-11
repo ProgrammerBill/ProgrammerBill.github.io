@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Last dance"
-subtitle:   "\"所以暂时将你眼前闭了起来\""
+summary:   "\"所以暂时将你眼前闭了起来\""
 date:       2020-02-03 16:48:15
 author:     "Bill"
 header-img: "img/bill/header-posts/2020-02-03-lastdance-header.jpg"
@@ -20,21 +20,21 @@ C调
 C Dm7 Em F G Am7, 其中2,6用了小七和弦
 
 主歌:
-(1 5 6 1) 
+(1 5 6 1)
 (2 1 5)
 (3 5 6 1)
 (2 5)
 
 间奏:
-(1 5 6 1) 
+(1 5 6 1)
 (2 1 5)
 (3 5 6 1)
 (2 5)
 
 副歌:
-(1 5 6 1) 
+(1 5 6 1)
 (3 5 6 1)
-(2 1 5 6)) 
+(2 1 5 6))
 (5 5)
 
 
@@ -56,7 +56,7 @@ Dm7 G
 明天我要离开
 
 C	G	Am7	C
-你给的爱 
+你给的爱
 Em	G	Am7 C
 无助的等待
 Dm7	C	G	Am7
@@ -64,7 +64,7 @@ Dm7	C	G	Am7
 G	G
 春风秋雨飘飘落落只为寂寞
 C	G	Am7	C
-你给的爱 
+你给的爱
 Em	G	Am7 C
 甜美的伤害
 Dm7	C	G	Am7

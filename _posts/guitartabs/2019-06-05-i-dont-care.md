@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "I don't care"
-subtitle:   "Ed Sheeran"
+summary:   "Ed Sheeran"
 date:       2019-06-05 22:46:00
 author:     "Bill"
 header-img: "img/bill/header-posts/2019-06-05-header.jpg"

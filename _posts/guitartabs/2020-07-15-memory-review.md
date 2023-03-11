@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "回忆的温存"
-subtitle:    "\"我很向往 一个天堂，我会在那里珍藏你模样\""
+summary:    "\"我很向往 一个天堂，我会在那里珍藏你模样\""
 date:       2020-07-15 09:23:13
 author:     "Bill"
 header-img: "img/bill/header-posts/2020-07-15-header.jpg"
