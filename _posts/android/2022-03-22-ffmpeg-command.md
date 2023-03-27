@@ -22,6 +22,7 @@ tags:
 * [2. 图片](#2-图片)
     * [2.1 格式转换](#21-格式转换)
 * [3. 查看视频包信息](#3-查看视频包信息)
+* [4. 查看视频格式信息](#4-查看视频格式信息)
 
 <!-- vim-markdown-toc -->
 
@@ -86,4 +87,10 @@ ffmpeg -i [src] [dst.jpg]
 
 ```
 ffprobe -show_packets [input.mp4] > output.log
+```
+
+# 4. 查看视频格式信息
+
+```
+ffprobe -i [input.mp4] -show_format
 ```
