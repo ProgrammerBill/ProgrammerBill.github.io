@@ -20,6 +20,7 @@ tags:
     * [2.4 P.4: Ideally, a program should be statically type safe](#24-p4-ideally-a-program-should-be-statically-type-safe)
     * [2.5 P.5: Prefer compile-time checking to run-time checking](#25-p5-prefer-compile-time-checking-to-run-time-checking)
     * [2.6 P.6: What cannot be checked at compile time should be checkable at run time](#26-p6-what-cannot-be-checked-at-compile-time-should-be-checkable-at-run-time)
+    * [2.7 P.7: Catch run-time errors early](#27-p7-catch-run-time-errors-early)
 
 <!-- vim-markdown-toc -->
 
@@ -477,15 +478,69 @@ void g3(int n)
 所以我们还是需要将对象和数组大小作为一个完整的整体传入，一些好的例子包括：
 
 ```c++
-extern void f4(vector<int>&); // separately compiled, possibly dynamically loaded extern void f4(span<int>);   // separately compiled, possibly dynamically loaded 
-                             // NB: this assumes the calling code is ABI-compatible, using a 
+extern void f4(vector<int>&); // separately compiled, possibly dynamically loaded extern void f4(span<int>);   // separately compiled, possibly dynamically loaded
+                             // NB: this assumes the calling code is ABI-compatible, using a
                              // compatible C++ compiler and the same stdlib implementation
-                             
-void g3(int n) { 
-    vector<int> v(n); 
+
+void g3(int n) {
+    vector<int> v(n);
     f4(v); // pass a reference, retain ownership
-    f4(span<int>{v}); // pass a view, retain ownership 
+    f4(span<int>{v}); // pass a view, retain ownership
 }
 ```
+
+## 2.7 P.7: Catch run-time errors early
+
+本节希望在更早的时候捕捉到运行时异常，还是以越界为例子。如下所示:
+
+```c++
+void increment1(int* p, int n)    // bad: error-prone
+{
+    for (int i = 0; i < n; ++i) ++p[i];
+}
+
+void use1(int m)
+{
+    const int n = 10;
+    int a[n] = {};
+    // ...
+    increment1(a, m);   // maybe typo, maybe m <= n is supposed
+                        // but assume that m == 20
+    // ...
+}
+```
+
+如果m=20，在程序执行时就会异常，如果能够在之前就检查一下是否会超过范围，那么就不会在运行到取下标时才暴露问题了。
+
+```c++
+void increment2(span<int> p)
+{
+    for (int& x : p) ++x;
+}
+
+void use2(int m)
+{
+    const int n = 10;
+    int a[n] = {};
+    // ...
+    //这里应该要有一个assert(m <= n);比较合理。
+    increment2({a, m});    // maybe typo, maybe m <= n is supposed
+    // ...
+}
+```
+
+当然使用span完全可以不用传入大小了，如：
+
+```c++
+void use3(int m)
+{
+    const int n = 10;
+    int a[n] = {};
+    // ...
+    increment2(a);   // the number of elements of a need not be repeated
+    // ...
+}
+```
+
 
 
