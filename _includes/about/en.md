@@ -16,8 +16,9 @@
 
 ## Multimedia Development Engineer
 
-**2020/05 - Present Tablet(Android 11/12/13)**
+**2020/05 - Present (Android 11/12/13)**
 
+- Audio
 - Multimedia(MediaPlayer/Codec2/OMX)
 - Camera(HAL1/HAL3)
 - GMS Tests(CTS/GTS/Camera ITS)
@@ -25,7 +26,7 @@
 
 ### Android Framework Engineer
 
-**2016/07 - 2020/05 TV BOX(Android 4.4/7/10)**
+**2016/07 - 2020/05 (Android 4.4/7/10)**
 
 - OTA/Recovery/BootAnimation
 - Device Customized/Optimization

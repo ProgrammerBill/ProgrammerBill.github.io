@@ -15,8 +15,9 @@
 
 ### Android多媒体开发工程师
 
-**2020/05 - 至今 平板(Android 11/12/13)**
+**2020/05 - 至今 (Android 11/12/13)**
 
+- Audio
 - 多媒体播控(MediaPlayer/Codec2/OMX)
 - Camera(HAL1/HAL3)
 - GMS Tests(CTS/GTS/Camera ITS)
@@ -24,7 +25,7 @@
 
 ### Android框架开发工程师
 
-**2016/07 - 2020/05 电视盒子(Android 4.4/7/10)**
+**2016/07 - 2020/05 (Android 4.4/7/10)**
 
 - OTA/Recovery/Bootanimation
 - 方案定制/裁剪
