@@ -8,6 +8,9 @@ author:     "Bill"
 header-img: "img/bill/header-posts/2021-07-14.png"
 catalog: true
 tags:
+    - c++
+---
+
 
 
 <!-- vim-markdown-toc GFM -->
