@@ -24,6 +24,7 @@ tags:
     * [2.5 P.5: Prefer compile-time checking to run-time checking](#25-p5-prefer-compile-time-checking-to-run-time-checking)
     * [2.6 P.6: What cannot be checked at compile time should be checkable at run time](#26-p6-what-cannot-be-checked-at-compile-time-should-be-checkable-at-run-time)
     * [2.7 P.7: Catch run-time errors early](#27-p7-catch-run-time-errors-early)
+    * [2.8 P.8: Don’t leak any resources](#28-p8-dont-leak-any-resources)
 
 <!-- vim-markdown-toc -->
 
@@ -546,4 +547,37 @@ void use3(int m)
 ```
 
 
+## 2.8 P.8: Don’t leak any resources
 
+这一章节是劝告不要泄漏资源，即使是很慢的泄漏方式，也会在长期的老化中暴露出来。
+
+
+不好的例子:
+
+```
+void f(char* name)
+{
+    FILE* input = fopen(name, "r");
+    // ...
+    if (something) return;   // bad: if something == true, a file handle is leaked
+    // ...
+    fclose(input);
+}
+```
+
+中途退出时容易忘记关闭句柄（C代码很容易出现这样的错误）
+
+
+好的例子：
+
+```
+void f(char* name)
+{
+    ifstream input {name};
+    // ...
+    if (something) return;   // OK: no leak
+    // ...
+}
+```
+
+通过隐式的析构函数，在生命周期结束时执行，会是更安全的选择。当然也可以看看gsl库的owner是怎么实现的。
