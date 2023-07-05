@@ -25,6 +25,7 @@ tags:
     * [2.6 P.6: What cannot be checked at compile time should be checkable at run time](#26-p6-what-cannot-be-checked-at-compile-time-should-be-checkable-at-run-time)
     * [2.7 P.7: Catch run-time errors early](#27-p7-catch-run-time-errors-early)
     * [2.8 P.8: Don’t leak any resources](#28-p8-dont-leak-any-resources)
+    * [2.9 P.9: Don’t waste time or space](#29-p9-dont-waste-time-or-space)
 
 <!-- vim-markdown-toc -->
 
@@ -554,7 +555,7 @@ void use3(int m)
 
 不好的例子:
 
-```
+```c++
 void f(char* name)
 {
     FILE* input = fopen(name, "r");
@@ -570,7 +571,7 @@ void f(char* name)
 
 好的例子：
 
-```
+```c++
 void f(char* name)
 {
     ifstream input {name};
@@ -581,3 +582,57 @@ void f(char* name)
 ```
 
 通过隐式的析构函数，在生命周期结束时执行，会是更安全的选择。当然也可以看看gsl库的owner是怎么实现的。
+
+## 2.9 P.9: Don’t waste time or space
+
+本小节是不要浪费时间和空间，如下面这个例子，在waste中，开辟了一个动态内存进行赋值，结束的时候销毁，完全可以使用静态变量实现。
+
+
+坏的例子：
+
+```c++
+struct X {
+    char ch;
+    int i;
+    string s;
+    char ch2;
+
+    X& operator=(const X& a);
+    X(const X&);
+};
+
+X waste(const char* p)
+{
+    if (!p) throw Nullptr_error{};
+    int n = strlen(p);
+    auto buf = new char[n];
+    if (!buf) throw Allocation_error{};
+    for (int i = 0; i < n; ++i) buf[i] = p[i];
+    // ... manipulate buffer ...
+    X x;
+    x.ch = 'a';
+    x.s = string(n);    // give x.s space for *p
+    for (gsl::index i = 0; i < x.s.size(); ++i) x.s[i] = buf[i];  // copy buf into x.s
+    delete[] buf;
+    return x;
+}
+
+void driver()
+{
+    X x = waste("Typical argument");
+    // ...
+}
+```
+
+
+坏的例子：
+
+以下是一个更常见的例子，每一次调用lower时，循环都会调strlen方法，完全可以在进入for前先计算出长度值。
+
+```c++
+void lower(zstring s)
+{
+    for (int i = 0; i < strlen(s); ++i) s[i] = tolower(s[i]);
+}
+```
+
