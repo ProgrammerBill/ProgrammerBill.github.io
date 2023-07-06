@@ -26,6 +26,8 @@ tags:
     * [2.7 P.7: Catch run-time errors early](#27-p7-catch-run-time-errors-early)
     * [2.8 P.8: Don’t leak any resources](#28-p8-dont-leak-any-resources)
     * [2.9 P.9: Don’t waste time or space](#29-p9-dont-waste-time-or-space)
+    * [2.10 P.10: Prefer immutable data to mutable data](#210-p10-prefer-immutable-data-to-mutable-data)
+    * [2.11 P.11: Encapsulate messy constructs, rather than spreading through the code](#211-p11-encapsulate-messy-constructs-rather-than-spreading-through-the-code)
 
 <!-- vim-markdown-toc -->
 
@@ -635,4 +637,49 @@ void lower(zstring s)
     for (int i = 0; i < strlen(s); ++i) s[i] = tolower(s[i]);
 }
 ```
+
+## 2.10 P.10: Prefer immutable data to mutable data
+
+本章节很短，目的是优先选择不变的数据，常量。如常量不会被莫名其妙的改动，常量能够在编译阶段优化。
+
+## 2.11 P.11: Encapsulate messy constructs, rather than spreading through the code
+
+
+本章的观点是，混乱的结构容易产生异常，并且难以维护和开发，一个好的接口应该是容易去使用的，如下面不好的例子，就会容易疏忽了对内存的消耗。
+
+
+```c++
+
+int sz = 100;
+int* p = (int*) malloc(sizeof(int) * sz);
+int count = 0;
+// ...
+for (;;) {
+    // ... read an int into x, exit loop if end of file is reached ...
+    // ... check that x is valid ...
+    if (count == sz)
+        p = (int*) realloc(p, sizeof(int) * sz * 2);
+    p[count++] = x;
+    // ...
+}
+```
+
+用C++的话，使用vector代替会更简洁清晰。
+
+```c++
+vector<int> v;
+v.reserve(100);
+// ...
+for (int x; cin >> x; ) {
+    // ... check that x is valid ...
+    v.push_back(x);
+}
+```
+
+简单来说，就是善用工具库，不用自己造轮子，不仅容易出错，而且难写。
+
+
+
+
+
 
