@@ -28,6 +28,8 @@ tags:
     * [2.9 P.9: Don’t waste time or space](#29-p9-dont-waste-time-or-space)
     * [2.10 P.10: Prefer immutable data to mutable data](#210-p10-prefer-immutable-data-to-mutable-data)
     * [2.11 P.11: Encapsulate messy constructs, rather than spreading through the code](#211-p11-encapsulate-messy-constructs-rather-than-spreading-through-the-code)
+    * [2.12 P.12: Use supporting tools as appropriate](#212-p12-use-supporting-tools-as-appropriate)
+    * [2.13 P.13: Use support libraries as appropriate](#213-p13-use-support-libraries-as-appropriate)
 
 <!-- vim-markdown-toc -->
 
@@ -680,6 +682,12 @@ for (int x; cin >> x; ) {
 
 
 
+## 2.12 P.12: Use supporting tools as appropriate
+
+本章观点是将一些重复性工作使用工具来完成，将精力放在其他上面。如我现在写C++的时候，都会在保存的时候运行下Clang-Format插件，保证格式。工具集后续有用上的继续补充。
 
 
+## 2.13 P.13: Use support libraries as appropriate
+
+本章推荐使用良好设计的库，能够节省时间和提高效率。推荐ISO C++和GSL的库（没用过）
 
