@@ -30,6 +30,8 @@ tags:
     * [2.11 P.11: Encapsulate messy constructs, rather than spreading through the code](#211-p11-encapsulate-messy-constructs-rather-than-spreading-through-the-code)
     * [2.12 P.12: Use supporting tools as appropriate](#212-p12-use-supporting-tools-as-appropriate)
     * [2.13 P.13: Use support libraries as appropriate](#213-p13-use-support-libraries-as-appropriate)
+* [3. Interfaces](#3-interfaces)
+    * [3.1 Make interfaces explicit](#31-make-interfaces-explicit)
 
 <!-- vim-markdown-toc -->
 
@@ -691,3 +693,18 @@ for (int x; cin >> x; ) {
 
 本章推荐使用良好设计的库，能够节省时间和提高效率。推荐ISO C++和GSL的库（没用过）
 
+
+# 3. Interfaces
+
+## 3.1 Make interfaces explicit
+
+本章的观点是，使得接口能够显示化，原因是一些判断或者假设，如果不是在接口里面定义或者描述的，就很容易被遗漏，比如一个不好的例子：
+
+```c++
+int round(double d)
+{
+    return (round_up) ? ceil(d) : d;    // don't: "invisible" dependency
+}
+```
+
+`round_up`是一个全局的变量，就会容易产生困惑，可能会因这个变量导致不同的计算结果。
