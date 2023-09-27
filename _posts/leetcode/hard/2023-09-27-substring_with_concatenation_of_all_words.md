@@ -7,7 +7,7 @@ author:     "Bill"
 header-img: "img/bill/header-posts/2023-03-11-header.jpg"
 catalog: true
 stickie: false
-hide: true
+hide: false
 life: false
 guitartab: false
 tags:
