@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      "substring_with_concatenation_of_all_words"
+title:      "Substring With Concatenation Of All Words"
 summary:    "\"default\""
 date:       2023-09-27 17:37:32
 author:     "Bill"
 header-img: "img/bill/header-posts/2023-03-11-header.jpg"
 catalog: true
 stickie: false
-hide: false
+hide: true
 life: false
 guitartab: false
 tags:
