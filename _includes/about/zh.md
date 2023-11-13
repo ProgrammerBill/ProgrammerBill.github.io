@@ -15,9 +15,9 @@
 
 ### Android多媒体开发工程师
 
-**2020/05 - 至今 (Android 11/12/13)**
+**2020/05 - 至今 (Android 11/12/13/14)**
 
-- Audio
+- Audio(HAL)
 - 多媒体播控(MediaPlayer/Codec2/OMX)
 - Camera(HAL1/HAL3)
 - GMS Tests(CTS/GTS/Camera ITS)

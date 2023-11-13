@@ -18,7 +18,7 @@
 
 **2020/05 - Present (Android 11/12/13)**
 
-- Audio
+- Audio(HAL)
 - Multimedia(MediaPlayer/Codec2/OMX)
 - Camera(HAL1/HAL3)
 - GMS Tests(CTS/GTS/Camera ITS)
