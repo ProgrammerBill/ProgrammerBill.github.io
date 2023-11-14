@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "N-Queens"
+title:      "N-Queens II"
 summary:    "\"default\""
-date:       2023-11-13 09:51:57
+date:       2023-11-14 09:27:51
 author:     "Bill"
 header-img: "img/bill/header-posts/2023-03-11-header.jpg"
 catalog: true
@@ -14,31 +14,31 @@ tags:
     - default
 ---
 
-# N-Queens
+# N-Queens II
+
 
 The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
 
-Given an integer n, return all distinct solutions to the n-queens puzzle. You may return the answer in any order.
+Given an integer n, return the number of distinct solutions to the n-queens puzzle.
 
-Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space, respectively.
+
 
 ```
 Example 1:
 
 
 Input: n = 4
-Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
-Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above
+Output: 2
+Explanation: There are two distinct solutions to the 4-queens puzzle as shown.
 Example 2:
 
 Input: n = 1
-Output: [["Q"]]
+Output: 1
 
 
 Constraints:
 
 1 <= n <= 9
-
 ```
 
 # Solution
@@ -96,7 +96,11 @@ class Solution {
     solveNQueensImpl(0, n, board);
     return res;
   }
+  int totalNQueens(int n) {
+    return solveNQueens(n).size();  
+  }
 };
-
 ```
+
+
 
