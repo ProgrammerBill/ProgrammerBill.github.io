@@ -4,7 +4,7 @@ title:      "Maximum Subarray"
 summary:    "\"default\""
 date:       2023-11-17 09:27:43
 author:     "Bill"
-header-img: "img/bill/header-posts/2023-11-17-header.jpg"
+header-img: "img/bill/header-posts/2023-03-11-header.jpg"
 catalog: true
 stickie: false
 hide: true
