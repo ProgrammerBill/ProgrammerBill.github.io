@@ -23,6 +23,7 @@ find $INPUT_MD_PATH -type f -name "*.md" | while read file; do
     # 在这里处理每个文件
     title_name=$(basename "$file" .md)
     python $ADD_YAML_HEADER_PY $file --title $title_name --summary $title_name --output $OUTPUT_BLOG_PATH/$DATE-$title_name.md
+    rm $file
 done
 
 cd $BLOG_REPOSITORY_PATH
