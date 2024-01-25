@@ -14,7 +14,7 @@ ADD_YAML_HEADER_PY="/home/chenjuncong/GitHubs/ProgrammerBill.github.io/addYamlHe
 DATE=`date +%Y-%m-%d`
 
 cd $YOUTDAO_PULL_PATH
-source myenv/bin/activate
+#source myenv/bin/activate
 python pull.py
 echo "pulling markdown files..."
 
