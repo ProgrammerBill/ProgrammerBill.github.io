@@ -15,7 +15,8 @@ ADD_YAML_HEADER_PY="$BLOG_REPOSITORY_PATH/addYamlHeader.py"
 DATE=`date +%Y-%m-%d`
 
 echo "pulling markdown files..."
-python $YOUTDAO_PULL_PATH/pull.py
+cd $YOUTDAO_PULL_PATH
+python pull.py
 
 find $INPUT_MD_PATH -type f -name "*.md" | while read file; do
     echo "Processing $file"
