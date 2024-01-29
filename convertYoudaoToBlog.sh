@@ -5,7 +5,6 @@
 # Created Time: 2024.01.25
 #########################################################################
 #!/bin/bash
-set -x
 echo "start pulling markdown files..."
 YOUTDAO_PULL_PATH="$HOME/GitHubs/youdaonote-pull"
 BLOG_REPOSITORY_PATH="$HOME/GitHubs/ProgrammerBill.github.io"
@@ -67,4 +66,3 @@ else
     git push origin master
 fi
 echo "finishied"
-set +x
