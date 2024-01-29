@@ -13,7 +13,7 @@ parser.add_argument("--author", help="Author for the YAML header", default="Bill
 parser.add_argument("--header-img", help="image for the YAML header", default="img/bill/header-posts/2024-01-24-header.png")
 parser.add_argument("--date", help="Date for the YAML header", default="2024-01-25")
 parser.add_argument("--catalog", help="set catalog for blog", default=True)
-parser.add_argument("--stickie", help="set this blog to the top", default=False)
+parser.add_argument("--stickie", action='store_true', help="set this blog to the top", default=False)
 parser.add_argument("--hide", help="hide this blog?", default=False)
 parser.add_argument("--life", help="this blog is for life not tech?", default=False)
 parser.add_argument("--guitartab", help="this blog is for guitartab?", default=False)
