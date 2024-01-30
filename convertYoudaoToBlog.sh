@@ -61,6 +61,7 @@ if git diff-index --quiet HEAD --; then
     echo "no change"
 else
     echo "change"
+    git pull
     git add .
     git commit -m "add new blog by auto robot"
     git push origin master
