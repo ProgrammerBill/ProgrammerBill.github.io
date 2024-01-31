@@ -5,6 +5,7 @@
 # Created Time: 2024.01.25
 #########################################################################
 #!/bin/bash
+#set -x
 echo "start pulling markdown files..."
 YOUTDAO_PULL_PATH="$HOME/GitHubs/youdaonote-pull"
 BLOG_REPOSITORY_PATH="$HOME/GitHubs/ProgrammerBill.github.io"
@@ -36,6 +37,7 @@ find $INPUT_MD_PATH/${INPUT_DIR[0]} -type f -name "*.md" | while read file; do
     python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[0]}/${output_name}"
     rm "$file"
 done
+cp -rf "${INPUT_MD_PATH}/${INPUT_DIR[0]}"/images "$BLOG_REPOSITORY_PATH/img/bill/in-posts/"
 
 # plan
 find $INPUT_MD_PATH/${INPUT_DIR[1]} -type f -name "*.md" | while read file; do
@@ -66,3 +68,4 @@ else
     git push origin master
 fi
 echo "finishied"
+#set +x
