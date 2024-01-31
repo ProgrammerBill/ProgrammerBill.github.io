@@ -51,10 +51,9 @@ find $INPUT_MD_PATH/${INPUT_DIR[1]} -type f -name "*.md" | while read file; do
         echo "$result"
         output_name=$(basename "$result")
     fi
-    python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --date $DATE --stickie --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[1]}/$DATE-$title_name.md"
+    python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --date $DATE --stickie --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[1]}/${output_name}"
     rm "$file"
 done
-
 
 cd $BLOG_REPOSITORY_PATH
 if git diff-index --quiet HEAD --; then
