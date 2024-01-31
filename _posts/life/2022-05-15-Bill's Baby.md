@@ -1,23 +1,17 @@
 ---
-layout: post
-title: Bill's Baby
 author: Bill
-header-img: img/bill/header-posts/2022-05-15-header.jpg
 catalog: true
-stickie: true
-life: true
-tags: 
-- #baby
-- #catalog
-- #stickie
-- #life
-- #summary=
+date: '2024-01-31'
 guitartab: false
+header-img: img/bill/header-posts/2024-01-24-header.png
+hide: false
+layout: post
+life: true
+stickie: true
+summary: Bill's Baby
+tags: []
+title: Bill's Baby
 ---
-
-
-
-
 # 概述
 
 记录老婆怀孕的日记
@@ -92,8 +86,9 @@ guitartab: false
 今天就是预产期了，但是臭宝还没开始发动，最迟在下周四五需要住院了，老婆臭宝加油！
 
 
+# 2024.01.29
 
-
+![臭宝戴着水果的塑料当帽子](/img/bill/in-posts/images/WEBRESOURCE7716e1519a4925aeb75fd44437146d941703491038.jpg)
 
 
 
