@@ -1,7 +1,7 @@
 ---
 author: Bill
 catalog: true
-date: '2024-01-31'
+date: '2024-02-02'
 guitartab: false
 header-img: img/bill/header-posts/2024-01-24-header.png
 hide: false
@@ -89,6 +89,4 @@ title: Bill's Baby
 # 2024.01.29
 
 ![臭宝戴着水果的塑料当帽子](/img/bill/in-posts/images/WEBRESOURCE7716e1519a4925aeb75fd44437146d941703491038.jpg)
-
-
 
