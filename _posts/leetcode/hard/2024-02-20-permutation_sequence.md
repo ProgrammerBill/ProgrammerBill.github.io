@@ -4,7 +4,7 @@ title:      "Permutation Sequence"
 summary:    "\"default\""
 date:       2024-02-20 15:24:19
 author:     "Bill"
-header-img: "img/bill/header-posts/2024-02-20-header.jpg"
+header-img: img/bill/header-posts/2024-01-24-header.png
 catalog: true
 stickie: false
 hide: true
