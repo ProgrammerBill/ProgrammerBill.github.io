@@ -8,7 +8,7 @@ hide: false
 layout: post
 life: true
 stickie: true
-summary: Bill's Baby
+summary: '"Bill''s Baby"'
 tags: []
 title: Bill's Baby
 ---

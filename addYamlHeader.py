@@ -51,7 +51,7 @@ tags_list = args.tags.split(",") if args.tags else []
 yaml_header = {
     "layout": "post",
     "title": args.title,
-    "summary": args.summary,
+    "summary": '"' + args.summary + '"',
     "date": args.date,
     "author": args.author,
     "header-img": args.header_img,
