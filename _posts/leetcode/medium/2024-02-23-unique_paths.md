@@ -4,7 +4,7 @@ title:      "Unique Paths"
 summary:    "\"default\""
 date:       2024-02-23 10:00:15
 author:     "Bill"
-header-img: "img/bill/header-posts/2024-01-24-header.jpg"
+header-img: "img/bill/header-posts/2023-03-11-header.jpg"
 catalog: true
 stickie: false
 hide: true
