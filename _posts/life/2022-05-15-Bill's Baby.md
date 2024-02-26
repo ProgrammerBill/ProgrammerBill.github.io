@@ -1,7 +1,7 @@
 ---
 author: Bill
 catalog: true
-date: '2024-02-23'
+date: '2024-02-26'
 guitartab: false
 header-img: img/bill/header-posts/2024-01-24-header.png
 hide: false
@@ -95,3 +95,10 @@ title: Bill's Baby
 臭宝过年期间得了支原体，跑了五六次医院看病，期间高烧反复，让人心疼，幸好最终抽血确认了原因，现在又生龙活虎啦。只是生病后，睡觉很不踏实，常常半夜哭闹，甚是费爸妈精力。
 
 ![过年带臭宝去看花](/img/bill/in-posts/images/WEBRESOURCEb5156244625365827641014889218e341591310512.jpg)
+
+# 2024.2.26
+
+上周末带臭宝看了横琴的花海长廊，才发现以前来露营的地方附近有这么好看的花儿。臭宝特别喜欢荡秋千，以至于回家的时候都哭了好久。
+
+![花海长廊的风筝](/img/bill/in-posts/images/WEBRESOURCEea703cfc9408e6683a87f2bad624af061925574636.jpg)
+
