@@ -34,7 +34,7 @@ find $INPUT_MD_PATH/${INPUT_DIR[0]} -type f -name "*.md" | while read file; do
         echo "$result"
         output_name=$(basename "$result")
     fi
-    python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[0]}/${output_name}"
+    python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --date $DATE --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[0]}/${output_name}"
     rm "$file"
 done
 
