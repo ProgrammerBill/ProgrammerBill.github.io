@@ -1,7 +1,7 @@
 ---
 author: Bill
 catalog: true
-date: '2024-02-26'
+date: '2024-02-27'
 guitartab: false
 header-img: img/bill/header-posts/2024-01-24-header.png
 hide: false
