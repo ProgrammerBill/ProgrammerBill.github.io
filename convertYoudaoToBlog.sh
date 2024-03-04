@@ -75,6 +75,7 @@ find $INPUT_MD_PATH/${INPUT_DIR[2]} -type f -name "*.md" | while read file; do
     echo "Processing $file"
     title_name=$(basename "$file" .md)
     result=$(find $OUTPUT_BLOG_PATH/${INPUT_DIR[2]} -type f -name "*$title_name*")
+    DATE=`date +%Y-%m-%d`
     output_name="$DATE-$title_name.md"
     # 检查变量内容
     if [ -z "$result" ]; then
@@ -83,6 +84,7 @@ find $INPUT_MD_PATH/${INPUT_DIR[2]} -type f -name "*.md" | while read file; do
         echo "找到了匹配的文件："
         echo "$result"
         output_name=$(basename "$result")
+        DATE=$(echo $output_name | cut -d'-' -f1-3)
     fi
     python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --date $DATE --stickie --life --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[2]}/${output_name}"
     rm "$file"
