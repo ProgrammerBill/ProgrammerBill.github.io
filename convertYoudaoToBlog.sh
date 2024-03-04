@@ -33,6 +33,7 @@ find $INPUT_MD_PATH/${INPUT_DIR[0]} -type f -name "*.md" | while read file; do
         echo "找到了匹配的文件："
         echo "$result"
         output_name=$(basename "$result")
+        DATE=$(echo $output_name | cut -d'-' -f1-3)
     fi
     python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --date $DATE --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[0]}/${output_name}"
     rm "$file"
@@ -56,6 +57,7 @@ find $INPUT_MD_PATH/${INPUT_DIR[1]} -type f -name "*.md" | while read file; do
         echo "找到了匹配的文件："
         echo "$result"
         output_name=$(basename "$result")
+        DATE=$(echo $output_name | cut -d'-' -f1-3)
     fi
     python $ADD_YAML_HEADER_PY "$file" --title "$title_name" --summary "$title_name" --date $DATE --stickie --output "$OUTPUT_BLOG_PATH/${INPUT_DIR[1]}/${output_name}"
     rm "$file"
