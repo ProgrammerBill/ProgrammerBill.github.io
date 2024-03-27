@@ -22,8 +22,8 @@ TinyAlsa是一个轻量级的 ALSA 替代品，专注于提供一个简单且易
 
 目前TinyAlsa在Android SDK的external目录下，存在两个版本：
 
-- tinyalsa
-- tinyalsa_new
+*   tinyalsa
+*   tinyalsa\_new
 
 而在Android调试音频的神器，tinyplay,tinycap,tinymix等都出自tinyalsa仓库中。
 
@@ -125,14 +125,13 @@ int main(int argc, char **argv)
 
 从上述代码可以得知：
 
-- tinyplay默认只支持wav音频格式的播放。
-- tinyplay默认输入参数包括：
-    - `-D`指定声卡。声卡代表一个物理声卡或音频接口。在系统中，每个声卡都被分配一个唯一的编号（通常从0开始）。这些声卡可以是内置的，比如主板上的集成音频接口，或者是外部的，比如通过 USB 连接的音频接口。
-    - `-d`指定设备。在 ALSA术语中，一个声卡可以有多个设备，每个设备代表一个特定的音频功能或接口。设备也是用唯一的编号来识别的。在 PCM 上下文中，一个设备可以是一个播放（输出）设备或一个录制（输入）设备。
-    - `-p`指定`period_size`。`period_size`指的是一个周期（也称为缓冲区片段或帧组）中的帧数。在 ALSA 和 tinyalsa 中，一帧定义为所有声道的单个样本集合。例如，在立体声音频中，一个左声道和一个右声道的样本组合成一帧。
-    - `-n`指定`period_count`。`period_count`指的是整个缓冲区包含的周期数量。整个缓冲区的大小等于周期大小乘以周期数。
-- 主要逻辑在play_sample，继续分析
-
+*   tinyplay默认只支持wav音频格式的播放。
+*   tinyplay默认输入参数包括：
+    *   `-D`指定声卡。声卡代表一个物理声卡或音频接口。在系统中，每个声卡都被分配一个唯一的编号（通常从0开始）。这些声卡可以是内置的，比如主板上的集成音频接口，或者是外部的，比如通过 USB 连接的音频接口。
+    *   `-d`指定设备。在 ALSA术语中，一个声卡可以有多个设备，每个设备代表一个特定的音频功能或接口。设备也是用唯一的编号来识别的。在 PCM 上下文中，一个设备可以是一个播放（输出）设备或一个录制（输入）设备。
+    *   `-p`指定`period_size`。`period_size`指的是一个周期（也称为缓冲区片段或帧组）中的帧数。在 ALSA 和 tinyalsa 中，一帧定义为所有声道的单个样本集合。例如，在立体声音频中，一个左声道和一个右声道的样本组合成一帧。
+    *   `-n`指定`period_count`。`period_count`指的是整个缓冲区包含的周期数量。整个缓冲区的大小等于周期大小乘以周期数。
+*   主要逻辑在play\_sample，继续分析
 
 ```c
 void play_sample(FILE *file, unsigned int card, unsigned int device, unsigned int channels,
@@ -212,10 +211,9 @@ void play_sample(FILE *file, unsigned int card, unsigned int device, unsigned in
 
 ```
 
-- pcm_open: 打开音频设备，需要输入对应的声卡，设备，表明播放还是录制，以及pcm的音频参数配置`pcm_config`。
-- pcm_write: 写音频数据到声卡
-- pcm_close: 关闭音频设备
-
+*   pcm\_open: 打开音频设备，需要输入对应的声卡，设备，表明播放还是录制，以及pcm的音频参数配置`pcm_config`。
+*   pcm\_write: 写音频数据到声卡
+*   pcm\_close: 关闭音频设备
 
 其中`pcm_config`的定义在asoundlib.h，如下所示：
 
@@ -260,11 +258,11 @@ struct pcm_config {
 };
 ```
 
-- `start_threshold` 控制着 PCM 设备开始播放或录制音频数据前缓冲区中必须累积的最小帧数。对于播放设备来说，一旦缓冲区中的帧数达到 `start_threshold`，播放就会开始。对于录制设备，达到阈值后开始录制。
-- `stop_threshold`控制着 PCM 设备停止播放或录制的条件。对于播放设备，当缓冲区中剩余的帧数小于 `stop_threshold` 时，播放将停止。对于录制设备，当录制的帧数达到 `stop_threshold` 时，录制会停止。
-- `silence_threshold` 和 `silence_size` 与静音数据的处理相关。它们通常用于配置录制设备，在录制过程中处理静音或背景噪声。`silence_threshold` 定义了将多少帧视为静音数据，而 `silence_size` 可以定义在检测到静音数据时要采取的操作或处理的长度。
+*   `start_threshold` 控制着 PCM 设备开始播放或录制音频数据前缓冲区中必须累积的最小帧数。对于播放设备来说，一旦缓冲区中的帧数达到 `start_threshold`，播放就会开始。对于录制设备，达到阈值后开始录制。
+*   `stop_threshold`控制着 PCM 设备停止播放或录制的条件。对于播放设备，当缓冲区中剩余的帧数小于 `stop_threshold` 时，播放将停止。对于录制设备，当录制的帧数达到 `stop_threshold` 时，录制会停止。
+*   `silence_threshold` 和 `silence_size` 与静音数据的处理相关。它们通常用于配置录制设备，在录制过程中处理静音或背景噪声。`silence_threshold` 定义了将多少帧视为静音数据，而 `silence_size` 可以定义在检测到静音数据时要采取的操作或处理的长度。
 
-在pcm_open前，还调用了`sample_is_playable`用于检查是否能够进行播放
+在pcm\_open前，还调用了`sample_is_playable`用于检查是否能够进行播放
 
 ```c
 //tinyplay.c
@@ -319,13 +317,12 @@ int check_param(struct pcm_params *params, unsigned int param, unsigned int valu
 
 ```
 
-- `pcm_params_get`获取关于该声卡的参数，底层设计Alsa的接口，放在后续分析。
-- 此处可以认为，`pcm_params_get`获取到了声卡的关于采样率，声道数，位宽，周期，周期数目等参数,并且可以通过`pcm_params_get_min`,`pcm_params_get_max`获取到最小值和最大值范围，当检查达到输入的参数不在范围以内，即可判断参数为不支持。
+*   `pcm_params_get`获取关于该声卡的参数，底层设计Alsa的接口，放在后续分析。
+*   此处可以认为，`pcm_params_get`获取到了声卡的关于采样率，声道数，位宽，周期，周期数目等参数,并且可以通过`pcm_params_get_min`,`pcm_params_get_max`获取到最小值和最大值范围，当检查达到输入的参数不在范围以内，即可判断参数为不支持。
 
 `pcm_is_ready`用于检查pcm->fd是否大于0，当调用`pcm_open`时，会调用底层接口打开节点，并对fd赋值。
 
 音频录制的流程和播放相仿，只是从`pcm_open`选择了输入参数即可。
-
 
 ## 2.2 tinyalsa接口分析
 
@@ -333,9 +330,9 @@ int check_param(struct pcm_params *params, unsigned int param, unsigned int valu
 
 `pcm_open`有涉及到Alsa库中的结构体和函数，比如:
 
-- `snd_pcm_info`:存储有关 PCM (Pulse Code Modulation) 音频设备的信息
-- `snd_pcm_hw_params`: 硬件参数
-- `snd_pcm_sw_params sparams`: 软件参数
+*   `snd_pcm_info`:存储有关 PCM (Pulse Code Modulation) 音频设备的信息
+*   `snd_pcm_hw_params`: 硬件参数
+*   `snd_pcm_sw_params sparams`: 软件参数
 
 先看下具体实现：
 
@@ -423,6 +420,7 @@ struct pcm *pcm_open(unsigned int card, unsigned int device,
     config->period_count = param_get_int(&params, SNDRV_PCM_HW_PARAM_PERIODS);
     pcm->buffer_size = config->period_count * config->period_size;
 
+    //PCM_MMAP是更高效的音频处理方式，可以减少数据在用户空间到内核空间的拷贝次数。
     if (flags & PCM_MMAP) {
         pcm->mmap_buffer = pcm->ops->mmap(pcm->data, NULL,
                 pcm_frames_to_bytes(pcm, pcm->buffer_size),
@@ -511,9 +509,8 @@ fail_open:
 
 ```
 
-- `pcm_hw_open`会在/dev/snd中打开设备节点，由于是播放，所以形式是如pcmC%uD%up的形式，如果是录音，就是c结尾。
-- `pcm_hw_open`初始化了有一个`pcm_hw_data`的结构体，用于保存声卡，设备，fd等信息，从而在`pcm_open`中，可以通过ioctl `SNDRV_PCM_IOCTL_INFO`获取这个音频设备的信息。
-
+*   `pcm_hw_open`会在/dev/snd中打开设备节点，由于是播放，所以形式是如pcmC%uD%up的形式，如果是录音，就是c结尾。
+*   `pcm_hw_open`初始化了有一个`pcm_hw_data`的结构体，用于保存声卡，设备，fd等信息，从而在`pcm_open`中，可以通过ioctl `SNDRV_PCM_IOCTL_INFO`获取这个音频设备的信息。
 
 ```c
 static int pcm_hw_open(unsigned int card, unsigned int device,
@@ -559,7 +556,6 @@ err_close:
 }
 
 ```
-
 
 ### 2.2.2 `pcm_write`
 
@@ -610,10 +606,7 @@ int pcm_write(struct pcm *pcm, const void *data, unsigned int count)
 }
 ```
 
-
 ### 2.2.3 `pcm_close`
-
-`pcm_close`负责调用
 
 ```c
 pcm_close(struct pcm *pcm)
@@ -652,31 +645,29 @@ static void pcm_hw_close(void *data)
 }
 ```
 
-
 # 3. Alsa
-
 
 alsa-lib（Advanced Linux Sound Architecture library）是Linux系统中的一个提供音频和MIDI（Musical Instrument Digital Interface）功能的库，它是ALSA音频系统的用户空间组件。alsa-lib的接口可以参考链接[alsa-lib](https://github.com/alsa-project/alsa-lib)
 
-
 在alsa-lib中，音频播放流程大致如下：
 
-1. 打开音频设备:
-    - 使用`snd_pcm_open()`函数打开PCM（Pulse Code Modulation）设备。这个步骤涉及到指定设备名称（如"default"）和打开模式（播放或录制）。
-2. 设置硬件参数（HW Params）:
-    - 使用`snd_pcm_hw_params_any()`初始化硬件参数结构。
-    - 使用`snd_pcm_hw_params_set_access()`设置访问类型（通常是交错模式）。
-    - 使用`snd_pcm_hw_params_set_format()`设置样本格式（如`SND_PCM_FORMAT_S16_LE`表示16位有符号小端）。
-    - 使用`snd_pcm_hw_params_set_rate_near()`设置采样率（如44100Hz）。
-    - 使用`snd_pcm_hw_params_set_channels()`设置声道数（如2代表立体声）。
-    - 最后，使用`snd_pcm_hw_params()`将配置的硬件参数应用到PCM设备上。
-3. 准备音频接口:
-    - 使用`snd_pcm_prepare()`函数准备PCM设备，使之处于就绪状态，等待播放数据。
-4. 写入音频数据进行播放:
-    - 使用`snd_pcm_writei()`或`snd_pcm_writen()`函数将音频数据写入PCM设备进行播放。这些函数接受音频数据的缓冲区和需要写入的帧数。如果写入操作因为缓冲区满等原因而阻塞，这些函数会等待直到有足够的空间进行写入。
-5. 处理XRUN（缓冲区下溢/过载）:
-    - 如果发生XRUN（比如播放设备的缓冲区空了，没有足够的数据播放），需要检测并处理这种情况。通常，处理XRUN包括调用`snd_pcm_prepare()`重新准备设备，并重新开始数据的写入。
-6. 音频播放完成:
-    - 播放完成后，使用`snd_pcm_drain()`来停止PCM设备，并等待最后的音频数据播放完成。
-。关闭音频设备:
-    - 使用`snd_pcm_close()`关闭PCM设备释放资源。
+1.  打开音频设备:
+    *   使用`snd_pcm_open()`函数打开PCM（Pulse Code Modulation）设备。这个步骤涉及到指定设备名称（如"default"）和打开模式（播放或录制）。
+2.  设置硬件参数（HW Params）:
+    *   使用`snd_pcm_hw_params_any()`初始化硬件参数结构。
+    *   使用`snd_pcm_hw_params_set_access()`设置访问类型（通常是交错模式）。
+    *   使用`snd_pcm_hw_params_set_format()`设置样本格式（如`SND_PCM_FORMAT_S16_LE`表示16位有符号小端）。
+    *   使用`snd_pcm_hw_params_set_rate_near()`设置采样率（如44100Hz）。
+    *   使用`snd_pcm_hw_params_set_channels()`设置声道数（如2代表立体声）。
+    *   最后，使用`snd_pcm_hw_params()`将配置的硬件参数应用到PCM设备上。
+3.  准备音频接口:
+    *   使用`snd_pcm_prepare()`函数准备PCM设备，使之处于就绪状态，等待播放数据。
+4.  写入音频数据进行播放:
+    *   使用`snd_pcm_writei()`或`snd_pcm_writen()`函数将音频数据写入PCM设备进行播放。这些函数接受音频数据的缓冲区和需要写入的帧数。如果写入操作因为缓冲区满等原因而阻塞，这些函数会等待直到有足够的空间进行写入。
+5.  处理XRUN（缓冲区下溢/过载）:
+    *   如果发生XRUN（比如播放设备的缓冲区空了，没有足够的数据播放），需要检测并处理这种情况。通常，处理XRUN包括调用`snd_pcm_prepare()`重新准备设备，并重新开始数据的写入。
+6.  音频播放完成:
+    *   播放完成后，使用`snd_pcm_drain()`来停止PCM设备，并等待最后的音频数据播放完成。
+        。关闭音频设备:
+    *   使用`snd_pcm_close()`关闭PCM设备释放资源。
+
