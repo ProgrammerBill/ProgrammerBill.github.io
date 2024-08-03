@@ -12,7 +12,7 @@ summary: '"Bill''s Baby"'
 tags: []
 title: Bill's Baby
 ---
-# 概述
+- # 概述
 
 记录老婆怀孕的日记
 
@@ -68,7 +68,6 @@ title: Bill's Baby
 
 到医院查了下胎儿心率，像小火车一样迅速呢！
 
-
 # 2022.06.24
 
 晚上回爸妈家后，老婆给打了个电话来，说摸胎动的时候感受到了宝宝的小脚，肉肉的太可爱了哈哈
@@ -84,7 +83,6 @@ title: Bill's Baby
 # 2022.09.25
 
 今天就是预产期了，但是臭宝还没开始发动，最迟在下周四五需要住院了，老婆臭宝加油！
-
 
 # 2024.01.29
 
@@ -102,9 +100,10 @@ title: Bill's Baby
 
 ![花海长廊的风筝](/img/bill/in-posts/images/WEBRESOURCEea703cfc9408e6683a87f2bad624af061925574636.jpg)
 
-
 # 2024.08.01
 
 臭宝和小伙伴的小飞机
 
 ![611481837.jpg](/img/bill/in-posts/images/WEBRESOURCE2bada397705712d3a496083450a06711611481837.jpg)
+
+
