@@ -102,3 +102,9 @@ title: Bill's Baby
 
 ![花海长廊的风筝](/img/bill/in-posts/images/WEBRESOURCEea703cfc9408e6683a87f2bad624af061925574636.jpg)
 
+
+# 2024.08.01
+
+臭宝和小伙伴的小飞机
+
+![611481837.jpg](/img/bill/in-posts/images/WEBRESOURCE2bada397705712d3a496083450a06711611481837.jpg)

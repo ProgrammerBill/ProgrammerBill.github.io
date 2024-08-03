@@ -54,6 +54,103 @@ CarAudioManager可以理解为专门用于车载的音频APIS，如果在config.
 mCarAudioManager = (CarAudioManager) car.getCarManager(Car.AUDIO_SERVICE); 
 ```
 
+# 3. CarAudioService
+
+在学习CarAudioService前，先了解下车载相关的配置。
+
+1.config.xml:
+
+在packages/services/Car/service/res/values/config.xml记录了有关车载的特性，包括官网上提到的：
+
+- audioUseDynamicRouting:开启动态路由，此时可以启用AAOS的路由策略。
+- audioUseCoreVolume:使用核心的音量API
+- audioUseCoreRouting:使用核心的音频路由API，可以和audioUseDynamicRouting共用。
+- audioUseCarVolumeGroupMuting:启动后能够根据Volume Grou进行独立的静音动作。
+- audioUseHalDuckingSignals:打开后，当需要对音频进行闪躲(duck)时,上层就能够通过IAudioControl#onDevicesToDuckChange通知到HAL层。
+
+CarAudioService的获取类似如下代码,用户可以在方案上通过overlay的方式对这些值进行赋值，也可以使用官网提到的在运行时改动应用资源[https://source.android.com/docs/core/runtime/rros?hl=zh-cn](https://source.android.com/docs/core/runtime/rros?hl=zh-cn)
+
+```java
+mUseDynamicRouting = mContext.getResources().getBoolean(R.bool.audioUseDynamicRouting);
+```
+
+2. car_audio_configuration.xml
+
+为了实现开始的框架所示的音频分区的功能，AAOS新增了car_audio_configuration.xml, 其结构和audio_policy_configuration.xml大不相同，包括：
+
+- 可以定义多个Zone音频区，至少有一个primary Zone。
+- Zone内可以定义zoneConfig，zoneConfig可以定义VolumeGroups
+- VolumeGroups中可以定义多个group，每个group可以绑定多个device，并且指定device的context上下文，如是播放音乐的，还是导航的。
+- device会定义address，这里又和audio_policy_configuration.xml中的address中一一对应。
+
+如官网展示的示例,分为了两个音频区，第一个区包括两个音量组，分别以`bus_1`,`bus_2`作为地址，与audio_policy_configuration.xml的devicePorts对应。前者负责音频，后者负责导航。
+
+
+```xml
+<carAudioConfiguration version="3">
+    <zones>
+        <zone name="Zone0" audioZneId="0" occupantZoneI="0">
+            <zoneConfigs>
+                <zoneConfig name="config0" isDefault="true">
+                   <volumeGoups>
+                        <group>
+                            <device address="bus_1">
+                                <context context="music"/>
+                            </device>
+                        </group>
+                        <group>
+                            <device address="bus_2">
+                                <context context="navigation"/>
+                            </device>
+                        </group>
+                        ...
+                    </volumeGroups>
+                </zoneConfig>
+            </zoneConfigs>
+        </zone>
+        <zone name="Zone1" audioZoneId="1" occupantZoneId="1">
+            <zoneConfigs>
+                <zoneConfig name="config0" isDefault="true">
+                    <volumeGroups>
+                        <group>
+                            <device address="bus_6">
+                                <context context="music"/>
+                            </device>
+                        </group>
+                        <group>
+                            <device address="bus_7">
+                                <context context="navigation"/>
+                           </device>
+                       </group>
+                       ...
+                    </volumeGroups>
+                </zoneConfig>
+            </zoneConfigs>
+        </zone>
+        ...
+    ...
+   </zones>
+</carAudioConfiguration>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
