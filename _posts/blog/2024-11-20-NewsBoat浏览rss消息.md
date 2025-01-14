@@ -50,7 +50,7 @@ https://github.com/ProgrammerBill/bill-newsboat-config
 
 可以愉快的利用碎片化时间阅读啦。
 
-![selection_174.png](/img/bill/in-posts/images/WEBRESOURCEe8f8660d375b28397177dd46ccd08fc2Selection_174.png)
+![selection_174.png](images/WEBRESOURCEe8f8660d375b28397177dd46ccd08fc2Selection_174.png)
 
 
 
