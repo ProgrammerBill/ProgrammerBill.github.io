@@ -86,24 +86,24 @@ title: Bill's Baby
 
 # 2024.01.29
 
-![臭宝戴着水果的塑料当帽子](img/bill/in-posts/images/WEBRESOURCE7716e1519a4925aeb75fd44437146d941703491038.jpg)
+![臭宝戴着水果的塑料当帽子](/img/bill/in-posts/images/WEBRESOURCE7716e1519a4925aeb75fd44437146d941703491038.jpg)
 
 # 2024.2.23
 
 臭宝过年期间得了支原体，跑了五六次医院看病，期间高烧反复，让人心疼，幸好最终抽血确认了原因，现在又生龙活虎啦。只是生病后，睡觉很不踏实，常常半夜哭闹，甚是费爸妈精力。
 
-![过年带臭宝去看花](img/bill/in-posts/images/WEBRESOURCEb5156244625365827641014889218e341591310512.jpg)
+![过年带臭宝去看花](/img/bill/in-posts/images/WEBRESOURCEb5156244625365827641014889218e341591310512.jpg)
 
 # 2024.2.26
 
 上周末带臭宝看了横琴的花海长廊，才发现以前来露营的地方附近有这么好看的花儿。臭宝特别喜欢荡秋千，以至于回家的时候都哭了好久。
 
-![花海长廊的风筝](img/bill/in-posts/images/WEBRESOURCEea703cfc9408e6683a87f2bad624af061925574636.jpg)
+![花海长廊的风筝](/img/bill/in-posts/images/WEBRESOURCEea703cfc9408e6683a87f2bad624af061925574636.jpg)
 
 # 2024.08.01
 
 臭宝和小伙伴的小飞机
 
-![611481837.jpg](img/bill/in-posts/images/WEBRESOURCE2bada397705712d3a496083450a06711611481837.jpg)
+![611481837.jpg](/img/bill/in-posts/images/WEBRESOURCE2bada397705712d3a496083450a06711611481837.jpg)
 
 
