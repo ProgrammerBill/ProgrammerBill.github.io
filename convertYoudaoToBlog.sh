@@ -12,6 +12,7 @@ BLOG_REPOSITORY_PATH="$HOME/GitHubs/ProgrammerBill.github.io"
 INPUT_MD_PATH="$BLOG_REPOSITORY_PATH/youdao_posts"
 OUTPUT_BLOG_PATH="$BLOG_REPOSITORY_PATH/_posts/"
 ADD_YAML_HEADER_PY="$BLOG_REPOSITORY_PATH/addYamlHeader.py"
+UPDATE_IMAGE_PATHS_PY="$BLOG_REPOSITORY_PATH/update_image_paths.py"
 INPUT_DIR=("blog" "plan" "life")
 
 echo "pulling markdown files..."
@@ -22,7 +23,7 @@ python pull.py
 find $INPUT_MD_PATH/${INPUT_DIR[0]} -type f -name "*.md" | while read file; do
     echo "Processing $file"
     # 更新 Markdown 文件中的图片路径
-    python update_image_paths.py "$file"
+    python $UPDATE_IMAGE_PATHS_PY "$file"
     # 在这里处理每个文件
     title_name=$(basename "$file" .md)
     result=$(find $OUTPUT_BLOG_PATH/${INPUT_DIR[0]} -type f -name "*$title_name*")
@@ -50,7 +51,7 @@ fi
 find $INPUT_MD_PATH/${INPUT_DIR[1]} -type f -name "*.md" | while read file; do
     echo "Processing $file"
     # 更新 Markdown 文件中的图片路径
-    python update_image_paths.py "$file"
+    python $UPDATE_IMAGE_PATHS_PY "$file"
     title_name=$(basename "$file" .md)
     result=$(find $OUTPUT_BLOG_PATH/${INPUT_DIR[1]} -type f -name "*$title_name*")
     DATE=`date +%Y-%m-%d`
@@ -78,7 +79,7 @@ fi
 find $INPUT_MD_PATH/${INPUT_DIR[2]} -type f -name "*.md" | while read file; do
     echo "Processing $file"
     # 更新 Markdown 文件中的图片路径
-    python update_image_paths.py "$file"
+    python $UPDATE_IMAGE_PATHS_PY "$file"
     title_name=$(basename "$file" .md)
     result=$(find $OUTPUT_BLOG_PATH/${INPUT_DIR[2]} -type f -name "*$title_name*")
     DATE=`date +%Y-%m-%d`
