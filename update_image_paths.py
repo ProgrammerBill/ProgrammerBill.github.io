@@ -6,7 +6,7 @@ def update_image_paths(md_file):
         content = f.read()
 
     # 替换图片路径
-    updated_content = re.sub(r'(!\[.*?\]\()images/', r'\1/img/bill/in-posts/images/', content)
+    updated_content = re.sub(r'(!\[.*?\]\()images/', r'\1img/bill/in-posts/images/', content)
 
     # 覆盖写回 Markdown 文件
     with open(md_file, 'w', encoding='utf-8') as f:
