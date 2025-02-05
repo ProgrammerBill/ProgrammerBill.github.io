@@ -21,6 +21,8 @@ python pull.py
 # blog
 find $INPUT_MD_PATH/${INPUT_DIR[0]} -type f -name "*.md" | while read file; do
     echo "Processing $file"
+    # 更新 Markdown 文件中的图片路径
+    python update_image_paths.py "$file"
     # 在这里处理每个文件
     title_name=$(basename "$file" .md)
     result=$(find $OUTPUT_BLOG_PATH/${INPUT_DIR[0]} -type f -name "*$title_name*")
@@ -47,6 +49,8 @@ fi
 # plan
 find $INPUT_MD_PATH/${INPUT_DIR[1]} -type f -name "*.md" | while read file; do
     echo "Processing $file"
+    # 更新 Markdown 文件中的图片路径
+    python update_image_paths.py "$file"
     title_name=$(basename "$file" .md)
     result=$(find $OUTPUT_BLOG_PATH/${INPUT_DIR[1]} -type f -name "*$title_name*")
     DATE=`date +%Y-%m-%d`
@@ -73,6 +77,8 @@ fi
 # life
 find $INPUT_MD_PATH/${INPUT_DIR[2]} -type f -name "*.md" | while read file; do
     echo "Processing $file"
+    # 更新 Markdown 文件中的图片路径
+    python update_image_paths.py "$file"
     title_name=$(basename "$file" .md)
     result=$(find $OUTPUT_BLOG_PATH/${INPUT_DIR[2]} -type f -name "*$title_name*")
     DATE=`date +%Y-%m-%d`
