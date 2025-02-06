@@ -104,6 +104,17 @@ title: Bill's Baby
 
 臭宝和小伙伴的小飞机
 
-![611481837.jpg](/img/bill/in-posts/images/WEBRESOURCE2bada397705712d3a496083450a06711611481837.jpg)
+![臭宝和小伙伴的小飞机](/img/bill/in-posts/images/WEBRESOURCE2bada397705712d3a496083450a06711611481837.jpg)
+
+# 2025.01.25
+
+臭宝年前逛彩灯市场。今年过年臭宝妈和姥姥带去教育路看灯去了，十分有气氛，拍照照片也特别有年味啊。
+
+![臭宝年前逛彩灯市场QQ](/img/bill/in-posts/images/d83ec8a523386f3032baa63bd90ba1d020250205162931_2.jpg)
 
 
+# 2025.01.31
+
+臭宝逛共乐灯会。过年唐家共乐园有灯会看，到处都是闪亮的动植物，还有黑悟空的造型！
+
+![臭宝逛共乐灯](/img/bill/in-posts/images/84a16bf26309dbd856cbb5eda12f73b420250205162931_1.jpg)
