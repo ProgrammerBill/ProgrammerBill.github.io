@@ -6,7 +6,7 @@
 
 - **Wechat:** cjcbill
 - **Email:**  cjcbill@gmail.com
-- **Blog:**   [http://cjcbill.com](http://cjcbill.com)
+- **Blog:**   [http://www.billcong.xyz/](http://www.billcong.xyz/)
 - **GitHub:** [https://github.com/ProgrammerBill](https://github.com/ProgrammerBill])
 - **LeetCode:**   [https://leetcode.cn/u/programmerbill/](https://leetcode.cn/u/programmerbill/)
 
@@ -16,7 +16,7 @@
 
 ## Multimedia Development Engineer
 
-**2020/05 - Present (Android 11/12/13)**
+**2020/05 - Present (Android 11/12/13/14/15/16/17)**
 
 - Audio(HAL)
 - Multimedia(MediaPlayer/Codec2/OMX)

@@ -5,7 +5,7 @@
 
 - **微信:**     cjcbill
 - **电子邮箱:** cjcbill@gmail.com
-- **个人博客:** [http://cjcbill.com](http://cjcbill.com)
+- **个人博客:** [http://www.billcong.xyz/](http://www.billcong.xyz/)
 - **GitHub:**   [https://github.com/ProgrammerBill](https://github.com/ProgrammerBill)
 - **LeetCode:**   [https://leetcode.cn/u/programmerbill/](https://leetcode.cn/u/programmerbill/)
 
@@ -15,7 +15,7 @@
 
 ### Android多媒体开发工程师
 
-**2020/05 - 至今 (Android 11/12/13/14)**
+**2020/05 - 至今 (Android 11/12/13/14/15/16/17)**
 
 - Audio(HAL)
 - 多媒体播控(MediaPlayer/Codec2/OMX)
